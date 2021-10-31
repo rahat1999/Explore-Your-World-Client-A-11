@@ -1,0 +1,18 @@
+.six-col-img{
+    width: 100%;
+    height: 250px;
+}
+
+small-col-img{
+    width: 100%;
+    height: 150px;
+}
+
+.pacakage-card{
+    box-shadow: .5px .5px 2px 1px gray;
+    padding:10px;
+    transition: .8s;
+}
+.pacakage-card:hover{
+    transform: scale(1.02);
+}

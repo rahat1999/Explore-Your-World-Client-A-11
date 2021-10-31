@@ -1,0 +1,22 @@
+
+
+
+
+/* ----------form css---------- */
+.booking-form input{
+    display: bolok;
+    border: 1px solid gray;
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: justify;
+}
+.form-title{
+    font-size: 30px;
+    color: black;
+    text-shadow: 2px 2px 2px white;
+    text-align: center;
+    border-bottom: 1.5px solid gray;
+}
+.error{
+    color:red;
+}

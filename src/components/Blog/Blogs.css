@@ -1,0 +1,16 @@
+.bolgs{
+    box-shadow: 1px 1px 4px 1px gray;
+    padding: 15px;
+}
+.blogs-img{
+    overflow: hidden;
+    width: 100%;
+    height: 300px;
+   }
+.images {
+    transition: 0.8s;
+}
+.images:hover{
+    transform: scale(1.2);
+    overflow: hidden;
+}

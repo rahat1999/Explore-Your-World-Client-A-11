@@ -1,0 +1,12 @@
+.add-form input{
+    display: block;
+    border: 1px solid gray;
+    margin-bottom: 10px;
+    width: 300px;
+    text-align: justify;
+}
+.add-form textarea{
+    width: 300px;
+    border: 1px solid gray;
+    /* margin-bottom: 10px; */
+}

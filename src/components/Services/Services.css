@@ -1,0 +1,28 @@
+.services-card{
+    box-shadow: .5px .5px 5px 1px gray;
+    background:#EEEDE7 ;
+    transition: .8s;
+}
+.services-card:hover{
+    transform: scale(1.04);
+}
+
+.sercice-ico{
+    text-align: center;
+}
+.sercice-ico .svs-icons{
+    color: white;
+    margin:10px 0;
+    background:#274472 ;
+    padding:25px 21px;
+    border-radius: 50%;
+    font-size: 50px;
+}
+.haiking{
+    color: white;
+    margin:10px 0;
+    background:#274472 ;
+    padding:22px 30px;
+    border-radius: 50%;
+    font-size: 50px;
+}

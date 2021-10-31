@@ -1,0 +1,14 @@
+.about-icon{
+    font-size: 60px;
+    text-align: center;
+    color: #145DA0;
+}
+.about-card{
+  border: none;
+    transition: .8s;
+    padding-top: 10px;
+}
+.about-card:hover{
+    box-shadow: 1px 1px 4px 1px gray;
+    transform: scale(1.05);
+}
