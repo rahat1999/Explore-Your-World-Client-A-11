@@ -60,10 +60,12 @@ const MyBooking = () => {
                                                     </div>
                                                     <div className="col-md-6">
                                                         <div className="card-body">
-                                                            <p className="card-text">{my?.tourBooked?.spot?.cost}$</p>
+                                                            <p className="card-text text-danger"><b>
+                                                                {my?.tourBooked?.spot?.cost}$
+                                                            </b></p>
                                                             <p className="card-text">
-                                                                <i className="far fa-clock text-danger">
-                                                                </i> {my?.tourBooked?.spot?.duration}
+                                                                <b><i className="far fa-clock text-danger">
+                                                                </i> {my?.tourBooked?.spot?.duration}</b>
                                                             </p>
                                                         </div>
                                                     </div>
@@ -80,9 +82,9 @@ const MyBooking = () => {
                                         <Card.Title className=" text-danger">
                                             <i className="far fa-user "></i> {my?.name} </Card.Title>
                                         <div className=" text-primary"><b><i className="far fa-envelope"></i> {my.email}</b></div>
-                                        <b className="me-2">Form: {my?.address}</b>
-                                        <i className="fas fa-long-arrow-alt-right text-danger"></i>
-                                        <b>To: {my?.tourBooked?.spot?.name}</b>
+                                        <div className="me-2"><b>Form: {my?.address}</b> </div>
+                                        <i className="fas fa-level-down-alt text-danger"></i>
+                                        <div><b>To: {my?.tourBooked?.spot?.name}</b></div>
                                         <span className="d-block">Date: {my?.date} </span>
                                         <span>Phone: {my?.phone} </span>
 
