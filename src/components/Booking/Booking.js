@@ -15,7 +15,7 @@ const Booking = () => {
         data.tourBooked = { spot }
         data.status = "pending.."
 
-        fetch('http://localhost:5000/bookingPlace', {
+        fetch('https://ghastly-vampire-84744.herokuapp.com/bookingPlace', {
             method: "Post",
             headers: {
                 'Content-Type': 'application/json'
@@ -34,7 +34,7 @@ const Booking = () => {
     };
 
     useEffect(() => {
-        fetch(`http://localhost:5000/singleTourSpot/${id}`)
+        fetch(`https://ghastly-vampire-84744.herokuapp.com/singleTourSpot/${id}`)
             .then(res => res.json())
             .then(data => setSpot(data))
     }, [])

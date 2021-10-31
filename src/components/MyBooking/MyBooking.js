@@ -9,7 +9,7 @@ const MyBooking = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/bookingPlace')
+        fetch('https://ghastly-vampire-84744.herokuapp.com/bookingPlace')
             .then(res => res.json())
             .then(data => setMyBooking(data))
     }, [cancel])
@@ -20,7 +20,7 @@ const MyBooking = () => {
     const cancleBooking = id => {
         const confirm = window.confirm('Are you sure wanna Cancle Booking ?')
         if (confirm) {
-            fetch(`http://localhost:5000/bookingPlace/${id}`, {
+            fetch(`https://ghastly-vampire-84744.herokuapp.com/bookingPlace/${id}`, {
                 method: "DELETE"
             })
                 .then(res => res.json())

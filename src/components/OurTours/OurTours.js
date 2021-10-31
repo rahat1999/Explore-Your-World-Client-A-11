@@ -7,7 +7,7 @@ const OurTours = () => {
     const [ourTrips, setOurTrips] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/touringSpot')
+        fetch('https://ghastly-vampire-84744.herokuapp.com/touringSpot')
             .then(res => res.json())
             .then(data => setOurTrips(data))
     }, [])

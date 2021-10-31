@@ -7,7 +7,7 @@ const TourBookingList = () => {
     const [deleteCount, setDeleteCount] = useState(null)
 
     useEffect(() => {
-        fetch("http://localhost:5000/bookingPlace")
+        fetch("https://ghastly-vampire-84744.herokuapp.com/bookingPlace")
             .then(res => res.json())
             .then(data => setBookingList(data))
     }, [deleteCount])
@@ -17,7 +17,7 @@ const TourBookingList = () => {
 
         const confirm = window.confirm("Are You Sure Wanna Cancle Booking?")
         if (confirm) {
-            fetch(`http://localhost:5000/bookingPlace/${id}`, {
+            fetch(`https://ghastly-vampire-84744.herokuapp.com/bookingPlace/${id}`, {
                 method: "DELETE"
             })
                 .then(res => res.json())
