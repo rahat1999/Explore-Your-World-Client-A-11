@@ -24,7 +24,7 @@ const TourBookingList = () => {
                 .then(data => {
                     console.log(data);
                     if (data.deletedCount) {
-                        setDeleteCount(false)
+                        setDeleteCount(true)
                         alert("Booking Delete Successfully ")
                     }
                     else {

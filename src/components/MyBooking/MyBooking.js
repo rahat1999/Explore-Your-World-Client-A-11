@@ -3,34 +3,38 @@ import { Card, Col, Container, Row, Button } from 'react-bootstrap';
 import useAuth from '../../Hooks/useAuth';
 
 const MyBooking = () => {
-    const { user } = useAuth()
-    const [cancel, setCancle] = useState(null)
+
     const [mybooking, setMyBooking] = useState([])
+    const [isCancled, SetIsCanceld] = useState(null)
 
+    console.log('my booking', mybooking)
+    const { user } = useAuth()
+    const email = user?.email
 
+    console.log(email)
     useEffect(() => {
-        fetch('https://ghastly-vampire-84744.herokuapp.com/bookingPlace')
+        fetch(`https://ghastly-vampire-84744.herokuapp.com/myBooking/${email}`)
             .then(res => res.json())
             .then(data => setMyBooking(data))
-    }, [cancel])
-    const myBook = mybooking.filter(res => res.email === user.email)
+    }, [isCancled])
 
 
-    //cancle booking 
+    /* cancle my booking */
     const cancleBooking = id => {
+        console.log(id)
         const confirm = window.confirm('Are you sure wanna Cancle Booking ?')
         if (confirm) {
-            fetch(`https://ghastly-vampire-84744.herokuapp.com/bookingPlace/${id}`, {
+            fetch(`https://ghastly-vampire-84744.herokuapp.com/myBooking/${id}`, {
                 method: "DELETE"
             })
                 .then(res => res.json())
                 .then(result => {
                     if (result.deletedCount) {
-                        setCancle(false)
+                        SetIsCanceld(true)
                         alert("Booking Delete Successfully ")
                     }
                     else {
-                        setCancle(false)
+                        SetIsCanceld(false)
                     }
                 })
         }
@@ -44,11 +48,11 @@ const MyBooking = () => {
 
             <Container>
                 <h2 className="text-center">My Booking List </h2>
-                <h5 className="text-center">My Total booking : {myBook?.length} </h5>
+                <h5 className="text-center">My Total booking : {mybooking?.length} </h5>
                 <Row xs={1} md={3} className="g-4">
 
                     {
-                        myBook.map(my =>
+                        mybooking.map(my =>
                             <Col key={my?._id}>
                                 <Card style={{ boxShadow: ".5px .5px 3px 1px gray", padding: '5px' }}>
                                     <div>
