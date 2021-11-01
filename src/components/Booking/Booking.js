@@ -8,6 +8,7 @@ import './Booking.css'
 
 const Booking = () => {
     const { id } = useParams()
+
     const [spot, setSpot] = useState([])
     const { user } = useAuth()
     const { register, handleSubmit, reset, formState: { errors } } = useForm();

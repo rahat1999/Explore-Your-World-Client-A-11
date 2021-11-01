@@ -16,7 +16,7 @@ const OurTours = () => {
         <Container>
             <div className="my-5">
                 <br />
-                <h2 className="text-center ">Our Trips</h2>
+                <h2 className="text-center ">Our Tours</h2>
                 <hr className='w-25 mx-auto mb-4' />
                 <Row xs={1} md={2} className="g-4">
 
@@ -35,15 +35,14 @@ const OurTours = () => {
                                         <div className="col-md-7">
                                             <div className="card-body">
                                                 <h4 className="card-title text-primary">
-                                                    {trip?.name}
+                                                    <i className="fas fa-map-marker-alt text-black"></i> {trip?.name}
                                                 </h4>
-                                                <span>---------------------------</span>
                                                 <div className="card-text">
                                                     {trip.details.slice(0, 120)}
                                                 </div>
                                                 <div> <Link
                                                     to={`/booking/${trip._id}`}>
-                                                    <Button variant="danger">Book Now</Button>
+                                                    <Button variant="danger">Booking Now</Button>
                                                 </Link></div>
                                             </div>
                                         </div>

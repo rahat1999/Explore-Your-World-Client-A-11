@@ -13,18 +13,19 @@ const Header = () => {
                 fixed="top"
             >
                 <Container>
-                    <Navbar.Brand href="#home" className="text-warning"><i className="fab fa-wordpress-simple text-white"></i> Explore Your World</Navbar.Brand>
+                    <Navbar.Brand href="#home" className="text-warning"><i className="fas fa-globe-europe text-white"></i> Explore
+                        <span className="text-white"> Your </span>
+                        World</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mx-auto ">
                             <Nav.Link as={Link} to="/home">Home</Nav.Link>
-                            <Nav.Link as={Link} to="/tours">Tours</Nav.Link>
-                            <Nav.Link as={Link} to="/services">Services</Nav.Link>
+                            <Nav.Link as={Link} to="/tours">OurTours</Nav.Link>
+                            {/* <Nav.Link as={Link} to="/services">Services</Nav.Link> */}
 
                             {
                                 user?.email ? <> <Nav.Link as={Link} to="/myBooking"><i className="fas fa-user-circle"></i> My Booking</Nav.Link>
-                                    <NavDropdown title="🛡️Admin" id="collasible-nav-dropdown">
-                                        {/* <NavDropdown.Item as={Link} to="/myBooking"><i className="fas fa-user-circle"></i> My Booking</NavDropdown.Item> */}
+                                    <NavDropdown title="Dashboard" id="collasible-nav-dropdown">
                                         <NavDropdown.Item as={Link} to="/manageList"><i className="fas fa-tasks"></i> Mnage Booking</NavDropdown.Item>
                                         <NavDropdown.Item as={Link} to="/addTour">
                                             <i className="fas fa-plus"></i> Add Tours</NavDropdown.Item>
@@ -35,6 +36,7 @@ const Header = () => {
                             <Nav.Link as={Link} to="/package">Package</Nav.Link>
 
                             <NavDropdown title="Info" id="collasible-nav-dropdown">
+                                <NavDropdown.Item as={Link} to="/services">Services</NavDropdown.Item>
                                 <NavDropdown.Item as={Link} to="/about">About</NavDropdown.Item>
                                 <NavDropdown.Item as={Link} to="/blogs">Blogs</NavDropdown.Item>
                                 <NavDropdown.Item as={Link} to="/contact">Contact</NavDropdown.Item>
