@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Button, Table } from 'react-bootstrap';
+import { Container, Button, Table, Row, Col, Card } from 'react-bootstrap';
 
 
 const TourBookingList = () => {
     const [bookingList, setBookingList] = useState([])
     const [deleteCount, setDeleteCount] = useState(null)
-
+    console.log(bookingList);
     useEffect(() => {
         fetch("https://ghastly-vampire-84744.herokuapp.com/bookingPlace")
             .then(res => res.json())
@@ -41,42 +41,60 @@ const TourBookingList = () => {
                 <h2 className='text-center'>Tour Spot Booking List</h2>
                 <h4 className="text-center padding-2 ">Total Booking: {bookingList.length}</h4>
 
-                <Table className="shadow" responsive="sm" striped bordered hover variant="secondary">
-                    <thead>
-                        <tr>
-                            <th>S</th>
-                            <th>Name</th>
-                            <th>Cost</th>
-                            <th>Booking Tour Spot</th>
-                            <th>Email</th>
-                            <th>Date</th>
-                            <th>Status</th>
-                            <th>Cancel Booking</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+                <div className=" mb-3" style={{ maWidth: " 740px" }}>
+                    <div className="row g-0">
                         {
                             bookingList.map((list, index) =>
-                                <tr key={list._id}>
-                                    <td>{index + 1}</td>
-                                    <td>{list?.name}</td>
-                                    <td>{list?.tourBooked?.spot?.cost}</td>
-                                    <td>{list?.tourBooked?.spot?.name}</td>
-                                    <td>{list?.email}</td>
-                                    <td>{list?.date}</td>
-                                    <td>
-                                        <Button variant="primary">{list?.status}</Button>
-                                    </td>
-                                    <td className='text-center'><Button onClick={() => cancleBooking(list._id)}
-                                        variant="danger" >Cancel</Button>
-                                    </td>
-                                </tr>
+                                <>
+                                    <span className=" text-danger"><b>({index + 1})</b></span>
+                                    <div key={list._id}
+                                        className="col bg-secondary text-white   rounded-2"
+                                        style={{ boxShadow: "1px 1px 4px 1px gray" }}
+                                    >
+                                        <div className="row g-0">
+                                            <div className="col-md-6">
+                                                <div className="card-body d-flex justify-content-around">
+                                                    <div className="">
+                                                        <Card.Title className="text-warning">{list?.name}</Card.Title>
+                                                        <div><b>From : {list?.address}</b></div>
+                                                        <div className="text-info">{list?.email}</div>
+                                                        <div>Booking Date: {list?.date}</div>
+                                                    </div>
+                                                    <div>
+                                                        <Card.Title className="text-warning">Booking Place</Card.Title>
+                                                        <div><b>To : {list?.tourBooked?.spot?.name}</b></div>
+                                                        <div className="text-info"><b>{list?.tourBooked?.spot?.cost}$</b></div>
+                                                        <div><b>{list?.tourBooked?.spot?.duration}$</b></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="col-md-6">
+                                                <div className="card-body d-flex justify-content-evenly">
+                                                    <div>
+                                                        <Card.Title>Status</Card.Title>
+                                                        <Card.Text>
+                                                            <Button variant="primary">{list?.status}</Button>
+                                                        </Card.Text>
+                                                    </div>
+                                                    <div>
+                                                        <Card.Title>Acton</Card.Title>
+                                                        <Card.Text>
+                                                            <Button onClick={() => cancleBooking(list._id)}
+                                                                variant="danger" >Booking Cancle</Button>
+                                                        </Card.Text>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </>
                             )
                         }
 
-                    </tbody>
-                </Table>
-            </Container>
+                    </div>
+                </div>
+
+            </Container >
         </div >
     );
 };
