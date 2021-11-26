@@ -7,21 +7,21 @@ const MyBooking = () => {
     const [mybooking, setMyBooking] = useState([])
     const [isCancled, SetIsCanceld] = useState(null)
 
-    console.log('my booking', mybooking)
+    // console.log('my booking', mybooking)
     const { user } = useAuth()
     const email = user?.email
 
-    console.log(email)
+    // console.log(email)
     useEffect(() => {
         fetch(`https://ghastly-vampire-84744.herokuapp.com/myBooking/${email}`)
             .then(res => res.json())
             .then(data => setMyBooking(data))
-    }, [isCancled])
+    }, [isCancled, email])
 
 
     /* cancle my booking */
     const cancleBooking = id => {
-        console.log(id)
+        // console.log(id)
         const confirm = window.confirm('Are you sure wanna Cancle Booking ?')
         if (confirm) {
             fetch(`https://ghastly-vampire-84744.herokuapp.com/myBooking/${id}`, {

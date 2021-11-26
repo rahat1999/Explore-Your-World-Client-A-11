@@ -17,8 +17,9 @@ const AddTours = () => {
             .then(result => {
                 if (result.insertedId) {
                     alert('Add Tour Spot Successfully')
+                    reset()
                 }
-                reset({})
+
             })
     };
 
@@ -37,7 +38,7 @@ const AddTours = () => {
                             </Card.Title>
                             <form onSubmit={handleSubmit(onSubmit)}>
                                 <label className="add-form">
-                                    Tour Spot Name:
+                                    Tour image url:
                                     <br />
                                     <input placeholder="Tour Image url" {...register("img")} required />
                                 </label>

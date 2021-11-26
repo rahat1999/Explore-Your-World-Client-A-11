@@ -27,18 +27,17 @@ const Booking = () => {
             .then(result => {
                 if (result.insertedId) {
                     alert('Booking Successfully')
+                    reset({})
                 }
             })
 
-
-        reset({})
     };
 
     useEffect(() => {
         fetch(`https://ghastly-vampire-84744.herokuapp.com/singleTourSpot/${id}`)
             .then(res => res.json())
             .then(data => setSpot(data))
-    }, [])
+    }, [id])
 
 
     return (

@@ -11,7 +11,7 @@ const NotFound = () => {
                 <Card style={{ alignItems: "center" }}>
                     <Card.Img style={{ width: '50%', height: "10%", }} variant="top" src="https://image.freepik.com/free-vector/error-404-concept-landing-page_52683-12757.jpg" />
                     <Card.Body>
-                        <Link to="home">
+                        <Link to="/home">
                             <Button variant="danger">Go Back</Button>{' '}</Link>
                     </Card.Body>
                 </Card>

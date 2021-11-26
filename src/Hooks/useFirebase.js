@@ -40,7 +40,7 @@ const useFirebase = () => {
             setIsLoading(false)
         });
         return () => unSubscribed;
-    }, [])
+    }, [auth])
 
     return {
 

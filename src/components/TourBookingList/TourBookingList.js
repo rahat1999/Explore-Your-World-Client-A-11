@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Button, Table, Row, Col, Card } from 'react-bootstrap';
+import { Container, Button, Card } from 'react-bootstrap';
 
 
 const TourBookingList = () => {
     const [bookingList, setBookingList] = useState([])
     const [deleteCount, setDeleteCount] = useState(null)
-    console.log(bookingList);
     useEffect(() => {
         fetch("https://ghastly-vampire-84744.herokuapp.com/bookingPlace")
             .then(res => res.json())
@@ -34,6 +33,7 @@ const TourBookingList = () => {
         }
     }
 
+
     return (
         <div className="my-5">
             <br />
@@ -48,7 +48,7 @@ const TourBookingList = () => {
                                 <>
                                     <span className=" text-danger"><b>({index + 1})</b></span>
                                     <div key={list._id}
-                                        className="col bg-secondary text-white   rounded-2"
+                                        className="col bg-secondary text-white mb-2  rounded-2"
                                         style={{ boxShadow: "1px 1px 4px 1px gray" }}
                                     >
                                         <div className="row g-0">
@@ -72,15 +72,20 @@ const TourBookingList = () => {
                                                 <div className="card-body d-flex justify-content-evenly">
                                                     <div>
                                                         <Card.Title>Status</Card.Title>
-                                                        <Card.Text>
-                                                            <Button variant="primary">{list?.status}</Button>
-                                                        </Card.Text>
+                                                        <div>
+                                                            <span className='border p-1 bg-primary rounded'>
+                                                                <b>{list?.status}</b>
+                                                            </span>
+                                                        </div>
                                                     </div>
+
+
+                                                    {/* CANCLE BUTTON */}
                                                     <div>
                                                         <Card.Title>Acton</Card.Title>
                                                         <Card.Text>
                                                             <Button onClick={() => cancleBooking(list._id)}
-                                                                variant="danger" >Booking Cancle</Button>
+                                                                variant="danger" > Cancle Booking</Button>
                                                         </Card.Text>
                                                     </div>
                                                 </div>

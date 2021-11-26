@@ -23,7 +23,6 @@ import TourBookingList from './components/TourBookingList/TourBookingList';
 import AddTours from './components/Form/AddTours/AddTours';
 import MyBooking from './components/MyBooking/MyBooking';
 
-
 function App() {
   return (
     <div className="App">
@@ -63,6 +62,7 @@ function App() {
             <PrivateRoute exact path="/package">
               <OurPackages></OurPackages>
             </PrivateRoute>
+
 
             <Route exact path="/blogs">
               <Blog></Blog>
