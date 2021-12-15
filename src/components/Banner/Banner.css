@@ -1,22 +1,46 @@
 .banner-tittle{
-   color: #81ffff  ;
-   text-shadow: 2px 2px 1px #193bd4;
+      display: flex;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      flex-direction:column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+  
+}
+.banner-header-title{
+color: #DC3545;
 }
 .banner-container{
 margin-top: 48px;
+/* linear-gradient(#020202a8,rgba(3, 3, 3, 0.534)), */
+position: relative;
+background: url(../../img/travel-concept.jpg)no-repeat;
+background-size: cover;
+background-position:center;
+height: 95vh;
+
 }
-.banner-pragraph{
-   color: white;
-   text-shadow: .3px .3px 2px black;
-   font-weight: bold;
-}
+
 @media only screen and (max-width: 600px) {
-   .banner-tittle{
-      color: #81ffff ;
-      text-shadow: 2px 2px 1px black;
+   .banner-container{
+      background-size:cover;
+      height: 45vh;
+   }
+   .banner-header-title{
+      color: white;
       font-size: 20px;
    }
-   .banner-pragraph{
+   .banner-paragraph{
       display: none;
+   }
+   .banner-tittle{
+      padding: 10px;
+      line-break: auto;
+      color: #0f0f0f ;
+      font-size: 20px;
    }
  }

@@ -17,8 +17,7 @@ const OurTours = () => {
     return (
 
         <Container>
-            <div className="my-5">
-                <br />
+            <div className="our-tour-section">
                 <h2 className="text-center ">Our Tours</h2>
                 <hr className='w-25 mx-auto mb-4' />
                 <Row xs={1} md={2} className="g-4">

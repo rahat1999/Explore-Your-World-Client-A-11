@@ -25,7 +25,7 @@ import MyBooking from './components/MyBooking/MyBooking';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" style={{ background: "#D7DBDD" }}>
       <AuthProvider>
         <Router>
           <Header></Header>
