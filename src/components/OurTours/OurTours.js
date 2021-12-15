@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Col, Container, Row } from 'react-bootstrap';
+import { Button, Col, Container, Row, Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './OurTour.css'
 const OurTours = () => {
 
     const [ourTrips, setOurTrips] = useState([])
-
+    const [loading, setLoading] = useState(false)
     useEffect(() => {
         fetch('https://ghastly-vampire-84744.herokuapp.com/touringSpot')
             .then(res => res.json())
-            .then(data => setOurTrips(data))
+            .then(data => {
+                setOurTrips(data)
+                setLoading(true)
+            })
     }, [])
     return (
 
@@ -21,7 +24,7 @@ const OurTours = () => {
                 <Row xs={1} md={2} className="g-4">
 
                     {
-                        ourTrips.map(trip =>
+                        loading ? ourTrips.map(trip =>
                             <Col key={trip?._id}>
 
                                 <div className="card border border-none mb-3 tour-container " style={{ maxWidth: "680px" }}>
@@ -49,7 +52,7 @@ const OurTours = () => {
                                     </div>
                                 </div>
 
-                            </Col>)
+                            </Col>) : <div className=" text-end"> <Spinner variant="danger" animation="border" /></div>
                     }
 
                 </Row>
